@@ -1,0 +1,42 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<img src="http://192.168.1.14:8081" style="float:left; width:100%; max-width: 700px; max-height:600px; border-radius:10px"/><br><br></img> <!--Enter the IP Address of your Raspberry Pi-->
+
+<div style=" height:50%; width:50%; float:right;">
+<center>
+<h1>IOT Mobile Remote</h1>
+<h1>Surveillance Robot</h1><br><br>
+<button href="#" id="up" style="font-size:50px;text-decoration:none;">  &#x1F881;&#x1F881;<br>Forward</button><br><br></center>
+<button href="#" id="left" style="font-size:50px;text-decoration:none;"> &#x1F880;&#x1F880;Left</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button href="#" id="right" style="font-size:50px; float:right; text-decoration:none;"> Right &#x1F882;&#x1F882;</button><br><br>
+<center><button href="#" id="down" style="font-size:50px;text-decoration:none;"> Backward<br> &#x1F883;&#x1F883;</button></center>
+</div>
+<script>
+$( document ).ready(function(){
+    $("#down").on("mousedown", function() {
+     $.get('/down_side');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#up").on("mousedown", function() {
+     $.get('/up_side');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#left").on("mousedown", function() {
+     $.get('/left_side');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#right").on("mousedown", function() {
+     $.get('/right_side');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+});
+</script>
+</body>
+</html>
