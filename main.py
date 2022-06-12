@@ -11,35 +11,9 @@ motor = Motor(17,22,27,2,3,4)
 
 app = Flask(__name__)
 
-
-# m11=18
-
-# m12=23
-
-# m21=24
-
-# m22=25
-
-
 GPIO.setwarnings(False)
 
 GPIO.setmode(GPIO.BCM)
-
-# GPIO.setup(m11, GPIO.OUT)
-
-# GPIO.setup(m12, GPIO.OUT)
-
-# GPIO.setup(m21, GPIO.OUT)
-
-# GPIO.setup(m22, GPIO.OUT)
-
-# GPIO.output(m11 , 0)
-
-# GPIO.output(m12 , 0)
-
-# GPIO.output(m21, 0)
-
-# GPIO.output(m22, 0)
 
 print "DOne"
 
@@ -63,14 +37,6 @@ def left_side():
     sleep(0.5)
     motor.stop(0.1)
 
-    # GPIO.output(m11 , 0)
-
-    # GPIO.output(m12 , 0)
-
-    # GPIO.output(m21 , 1)
-
-    # GPIO.output(m22 , 0)
-
     return 'true'
 
 
@@ -84,14 +50,6 @@ def right_side():
     sleep(0.5)
     motor.stop(0.1)
 
-    #    GPIO.output(m11 , 1)
-
-    #    GPIO.output(m12 , 0)
-
-    #    GPIO.output(m21 , 0)
-
-    #    GPIO.output(m22 , 0)
-
     return 'true'
 
 
@@ -104,13 +62,6 @@ def up_side():
     motor.move(0.6,0,0.2)
     sleep(0.5)
     motor.stop(0.1)
-    #    GPIO.output(m11 , 1)
-
-    #    GPIO.output(m12 , 0)
-
-    #    GPIO.output(m21 , 1)
-
-    #    GPIO.output(m22 , 0)
 
     return 'true'
 
@@ -124,13 +75,6 @@ def down_side():
     motor.move(-0.6,0,0.2)
     sleep(0.5)
     motor.stop(0.1)
-    #    GPIO.output(m11 , 0)
-
-    #    GPIO.output(m12 , 1)
-
-    #    GPIO.output(m21 , 0)
-
-    #    GPIO.output(m22 , 1)
 
     return 'true'
 
@@ -141,13 +85,6 @@ def stop():
 
     data1="STOP"
     motor.stop(0.1)
-#    GPIO.output(m11 , 0)
-
-#    GPIO.output(m12 , 0)
-
-#    GPIO.output(m21 , 0)
-
-#    GPIO.output(m22 , 0)
 
     return  'true'
 
